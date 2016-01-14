@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Storage;
 
 Route::group(['middleware' => ['web']], function () {
 	Route::get('/', function () {
-	    Storage::disk('s3')->put('file.txt', 'Contents');
+	    Storage::disk('s3')->put('file.txt', 'Hey Amazon S3');
+
+	    return 'done';
 	});
 });
